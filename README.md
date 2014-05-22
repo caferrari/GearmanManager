@@ -7,7 +7,7 @@ PHP Requirements
  * PHP 5.2.? - not sure exact version
  * POSIX extension
  * Process Control extension
- * pecl/gearman or Net_Gearman
+ * pecl/gearman
 
 Why use GearmanManager
 ======================
@@ -19,7 +19,7 @@ The basic idea is that once deployed, all you need to do is write the code that 
 How it works
 ============
 
-We start by deciding where our worker code will live. For this example, lets say we create a directory called worker_dir to hold all our worker code. We would then create files like these: (These examples use pecl/gearman syntax. For PEAR/Gearman see the example pear workers for minor differences)
+We start by deciding where our worker code will live. For this example, lets say we create a directory called worker_dir to hold all our worker code. We would then create files like these: (These examples use pecl/gearman syntax.
 
 Procedural:
 

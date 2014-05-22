@@ -49,20 +49,11 @@ else
   cp ${WORKING_DIR}/${DISTRO}.sh ${WORKING_DIR}/${DISTRO}.build.sh
 fi
 
-
-# symlink proper library wrapper into bin
-if [ -z "${PHPLIB}" ]; then
-  echo "Which PHP library to use, pecl/gearman or PEAR::Net_Gearman?"
-  select PHPLIB in "pecl" "pear"; do
-    break
-  done
-fi
-
 # create and populate installation folder
 mkdir -p ${INSTALL_DIR}
 cp -r ${WORKING_DIR}/../* ${INSTALL_DIR}/
 echo "Installing to ${INSTALL_DIR}"
-ln -fs ${INSTALL_DIR}/${PHPLIB}-manager.php ${DAEMON}
+ln -fs ${INSTALL_DIR}/pecl-manager.php ${DAEMON}
 echo "Installing executable to ${DAEMON}"
 
 # create config folders
